@@ -1,0 +1,8 @@
+{
+  "name": "minibusMobile",
+  "app_id": "aa4d58be",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,22 @@
+page-login {
+  .logo {
+    padding: 50px 16px 0 16px;
+    h1 {
+      font-size: 4rem;
+      color: #488aff;
+    }
+  }
+  .intro {
+    p {
+      font-size: 1.6rem;
+      color: #aaa;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-grid[fixed] {
+    width: 360px;
+    max-width: 100%;
+  }
+}

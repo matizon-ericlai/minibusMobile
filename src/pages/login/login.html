@@ -1,0 +1,25 @@
+<ion-content padding>
+    <ion-grid class="login-grid" fixed>
+        <div class="logo" text-center>
+            <h1>Minibus Portal</h1>
+        </div>
+        <div class="intro" padding text-center>
+            <p>Welcome to Minibus Portal</p>
+            <p>Login Minibus Portal. To see it in action.</p>
+        </div>
+        <ion-list padding>
+            <form (ngSubmit)="login()">
+                <ion-item>
+                    <ion-label fixed>Username</ion-label>
+                    <ion-input type="text" [(ngModel)]="data.username" name="Username"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label fixed>Password</ion-label>
+                    <ion-input type="password" [(ngModel)]="data.password" name="Password"></ion-input>
+                </ion-item>
+                <button ion-button type="submit" block>Login</button>
+            </form>
+        </ion-list>
+    </ion-grid>
+</ion-content>

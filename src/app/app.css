@@ -1,0 +1,13 @@
+.content {
+  background: #2f4050; }
+
+.item-input .label-md, .item-input .label-ios, .item-select .label-md, .item-datetime .label-md {
+  color: #606060; }
+
+.alert-warning .toast-wrapper {
+  background-color: #fcf8e3;
+  border-color: #faebcc; }
+  .alert-warning .toast-wrapper .toast-message {
+    color: #8a6d3b; }
+
+/*# sourceMappingURL=app.css.map */
