@@ -15,10 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.content {
-  background: #2f4050;
-}
-
 .item-input .label-md, .item-input .label-ios, .item-select .label-md, .item-datetime .label-md {
   color: #606060;
 }
@@ -31,4 +27,36 @@
       color: #8a6d3b;
     }
   }
+}
+
+.block {
+  display: block;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.none {
+  display: none;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

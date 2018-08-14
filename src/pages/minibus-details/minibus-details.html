@@ -1,0 +1,266 @@
+<ion-header>
+    <ion-navbar>
+        <!--<button ion-button menuToggle>-->
+            <!--<ion-icon name="menu"></ion-icon>-->
+        <!--</button>-->
+        <ion-title>{{carPlate}}</ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="showView">
+            <ion-segment-button value="current" (click)="getCurrentDetails()">
+                Current Details
+            </ion-segment-button>
+            <ion-segment-button value="history">
+                History List
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div [ngSwitch]="showView">
+        <ion-grid *ngSwitchCase="'current'">
+            <ion-row class="form-display">
+                <ion-col col-6>
+                    <p class="title">Car Plate</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{carPlate}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Receive Time</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{receiveTime | date:'yyyy-MM-dd HH:mm:ss':'+0000'}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Speed</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{speed}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Battery Actual Current</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{batteryActualCurrent}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Pos_contactor Battery Voltage</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{batteryVoltage}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Maximum Cell Temperature</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{cellTemperature}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>HVIL fault</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{hvilFault}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Isolation fault state</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{isolationFaultState}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>BMS Actual SOC</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{bmsActualSoc}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>State Of Health</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{statusOfHealth}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Isolation Resistance</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{isolationResistance}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Battery State</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{batteryState}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Fault Active/Severity Indicator</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{severityIndicator}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Battery door status</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{doorStatus}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Gear</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{gear}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Gearbox fault</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{gearboxFault}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Motor temperature</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{motorTemperature}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>IPU temperature</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{ipuTemperature}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>IPU_Fail_Grade</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{ipuFailGrade}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Motor_Fail_Grade</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{motorFailGrade}}</p>
+                </ion-col>
+                <ion-col col-6 class="title">
+                    <p>Cooling system fault</p>
+                </ion-col>
+                <ion-col col-6>
+                    <p>{{coolingSystemFault}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row class="table-display">
+                <ion-col col-12 class="title">
+                    <p>Passenger seat status color</p>
+                </ion-col>
+                <ion-col col-12 class="data">
+                    <table class="table table-striped seat-status-color">
+                        <tbody>
+                        <tr>
+                            <td class="col-sm-3">
+                                <p>empty seat</p>
+                            </td>
+                            <td class="col-sm-3 seat-status-success">
+                                <p>occupied with seat belt fastened</p>
+                            </td>
+                            <td class="col-sm-3 seat-status-warning">
+                                <p>empty seat with seat belt fastened</p>
+                            </td>
+                            <td class="col-sm-3 seat-status-danger">
+                                <p>occupied without seat belt fastened</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </ion-col>
+                <ion-col col-12 class="title">
+                    <p>Passenger Seat Status</p>
+                </ion-col>
+                <ion-col col-12>
+                    <table class="table table-striped minibus-floor-plan">
+                        <tbody>
+                        <tr>
+                            <td [ngClass]="seatStatus1">1</td>
+                            <td [ngClass]="seatStatus2">2</td>
+                            <td [ngClass]="seatStatus5">5</td>
+                            <td [ngClass]="seatStatus8">8</td>
+                            <td [ngClass]="seatStatus11">11</td>
+                            <td [ngClass]="seatStatus14">14</td>
+                            <td [ngClass]="seatStatus17">17</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td [ngClass]="seatStatus3">3</td>
+                            <td [ngClass]="seatStatus6">6</td>
+                            <td [ngClass]="seatStatus9">9</td>
+                            <td [ngClass]="seatStatus12">12</td>
+                            <td [ngClass]="seatStatus16">15</td>
+                            <td [ngClass]="seatStatus18">18</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td [ngClass]="seatStatus19">19</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td [ngClass]="seatStatus4">4</td>
+                            <td [ngClass]="seatStatus7">7</td>
+                            <td [ngClass]="seatStatus10">10</td>
+                            <td [ngClass]="seatStatus13">13</td>
+                            <td [ngClass]="seatStatus16">16</td>
+                            <td [ngClass]="seatStatus20">20</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid *ngSwitchCase="'history'">
+            <ion-row class="table-display">
+                <ion-col col-12>
+                    <table class="table table-striped history-list">
+                        <thead>
+                        <tr>
+                            <!--<th>Receive Time</th>-->
+                            <th>Max Cell Temp (°C)</th>
+                            <th>SoC</th>
+                            <th>Batt State</th>
+                            <th>Motor Temp (°C)</th>
+                            <th>Cooling Fault</th>
+                            <th>Passenger Seat Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let receiveData of receiveDataList" (click)="showDetails(receiveData.id)">
+                            <!--<td>{{receiveData.create_date | date:'yyyy-MM-dd HH:mm:ss':'+0000'}}</td>-->
+                            <td>{{receiveData.cell_temperature}}</td>
+                            <td>{{receiveData.bms_actual_soc}}</td>
+                            <td>{{receiveData.battery_state}}</td>
+                            <td>{{receiveData.motor_temperature}}</td>
+                            <td>{{receiveData.cooling_system_fault}}</td>
+                            <td>{{receiveData.seat_status_2_count}} / 20</td>
+                        </tr>
+                        <tr [ngClass]="noRecord">
+                            <td colspan="6">No Records.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </ion-col>
+                <ion-col col-12 class="pagination" [ngClass]="havePagination">
+                    <ion-col col-5 class="pull-left">Total: {{currentItem}} / {{totalItems}}</ion-col>
+                    <ion-col col-7 class="pull-right text-right pagination-button">
+                        <ion-col col-2><ion-icon name="skip-backward" [ngClass]="previous" (click)="goFullPrevious()"></ion-icon></ion-col>
+                        <ion-col col-2><ion-icon name="arrow-back" [ngClass]="previous" (click)="goPrevious()"></ion-icon></ion-col>
+                        <ion-col col-4 class="page-number">{{currentPage}}</ion-col>
+                        <ion-col col-2><ion-icon name="arrow-forward" [ngClass]="next" (click)="goNext()"></ion-icon></ion-col>
+                        <ion-col col-2><ion-icon name="skip-forward" [ngClass]="next" (click)="goFullNext()"></ion-icon></ion-col>
+                    </ion-col>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

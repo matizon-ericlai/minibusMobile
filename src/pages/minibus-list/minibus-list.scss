@@ -1,0 +1,21 @@
+page-minibus-list {
+  .title-md {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+    z-index:-1;
+  }
+  .logout-button {
+    float: right;
+    z-index: 999;
+    ion-icon {
+      font-size: 3rem;
+      color: #7c7c7c;
+      padding: 0 10px;
+    }
+  }
+  p:first-child {
+    font-weight: 500;
+  }
+}

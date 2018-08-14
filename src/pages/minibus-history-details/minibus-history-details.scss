@@ -1,0 +1,89 @@
+page-minibus-history-details {
+  .toolbar-content-md {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .back-button-md {
+    z-index: 100;
+  }
+  .form-display {
+    ion-col {
+      border-bottom: 1px dashed #c2c3c3;
+      p {
+        color: #4b4d4e;
+      }
+    }
+    .title {
+      font-weight: 500;
+    }
+  }
+  .table-display {
+    p {
+      color: #4b4d4e;
+    }
+    .table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    .table-striped>tbody>tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+    .seat-status-color tr td {
+      padding: 3px!important;
+    }
+    .title {
+      font-weight: 500;
+    }
+    .data {
+      border-bottom: 1px dashed #c2c3c3;
+    }
+    .seat-status-success {
+      background: #18a689;
+      color:#fff;
+      p {
+        color:#fff;
+      }
+    }
+    .seat-status-warning {
+      background: #f8ac59;
+      color:#fff;
+      p {
+        color:#fff;
+      }
+    }
+    .seat-status-danger {
+      background: #ed5565;
+      color:#fff;
+      p {
+        color:#fff;
+      }
+    }
+    .minibus-floor-plan tr td {
+      border: 1px solid #e7eaec;
+      text-align:center;
+      font-size:16px;
+      padding:10px!important;
+    }
+    .history-list {
+      thead {
+        tr {
+          th {
+            border-bottom: 1px solid #DDDDDD;
+            vertical-align: top;
+            padding: 5px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

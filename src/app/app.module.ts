@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
-import { DashboardPage } from '../pages/dashboard/dashboard';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { MinibusListPage } from '../pages/minibus-list/minibus-list';
+import { MinibusDetailsPage } from '../pages/minibus-details/minibus-details';
+import { MinibusHistoryDetailsPage } from '../pages/minibus-history-details/minibus-history-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,22 +18,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
       MyApp,
       LoginPage,
-      HomePage,
-      ListPage,
-      DashboardPage
+      MinibusListPage,
+      MinibusDetailsPage,
+      MinibusHistoryDetailsPage
   ],
   imports: [
       BrowserModule,
       IonicModule.forRoot(MyApp),
-      HttpClientModule
+      IonicStorageModule.forRoot(),
+      HttpClientModule,
+      NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
       MyApp,
       LoginPage,
-      HomePage,
-      ListPage,
-      DashboardPage
+      MinibusListPage,
+      MinibusDetailsPage,
+      MinibusHistoryDetailsPage
   ],
   providers: [
       StatusBar,
